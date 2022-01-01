@@ -22,7 +22,7 @@ var template = Handlebars.precompile(script, {
 if (!verbose) {
   console.log(template);
 } else {
-  var consumer = new SourceMapConsumer(template.map),
+  var consumer = await new SourceMapConsumer(template.map),
     lines = template.code.split('\n'),
     srcLines = script.split('\n');
 
@@ -111,4 +111,6 @@ if (!verbose) {
       );
     }
   });
+
+  consumer.destroy();
 }
