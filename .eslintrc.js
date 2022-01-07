@@ -5,9 +5,13 @@ module.exports = {
   },
   env: {
     node: true,
-    es6: true
+    es2017: true
+  },
+  parserOptions: {
+    sourceType: 'module'
   },
   rules: {
+    // TODO check if redundant rules
     'no-console': 'warn',
 
     // temporarily disabled until the violating places are fixed.
@@ -57,10 +61,5 @@ module.exports = {
     // ECMAScript 6 //
     //--------------//
     'no-var': 'error'
-  },
-  parserOptions: {
-    sourceType: 'module',
-    ecmaVersion: 6,
-    ecmaFeatures: {}
   }
 };

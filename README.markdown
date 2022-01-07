@@ -79,7 +79,7 @@ There are a few Mustache behaviors that Handlebars does not implement.
 Supported Environments
 ----------------------
 
-Handlebars has been designed to work in any ECMAScript 7 (2016) environment. This includes
+Handlebars has been designed to work in any ECMAScript 2017 environment. This includes
 
 - Node.js
 - Deno
