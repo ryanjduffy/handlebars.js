@@ -86,4 +86,10 @@ jobs:
         run: npx grunt prepare
 
       - name: Test
-        run: npm run test:browser
+        uses: replayio/action-playwright@v0.3.0
+        with:
+          command: npm run test:browser --
+          apiKey: ${{ secrets.RECORD_REPLAY_API_KEY }}
+          issue-number: ${{ github.event.pull_request.number }}
+          project: replay-chromium
+          upload-all: true

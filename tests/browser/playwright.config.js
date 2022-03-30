@@ -1,4 +1,5 @@
 const { devices } = require('@playwright/test');
+const { devices: replayDevices } = require('@replayio/playwright');
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
@@ -14,6 +15,14 @@ const config = {
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] }
+    },
+    {
+      name: 'replay-chromium',
+      use: { ...replayDevices['Replay Chrome'] }
+    },
+    {
+      name: 'replay-firefox',
+      use: { ...replayDevices['Replay Firefox'] }
     }
   ],
   reporter: 'list',
